@@ -43,7 +43,12 @@ stringOfNumbers(15);
  * @return { Number }
  */
 function sumOfArray(array){
-
+	var sum;
+	for (var i = 0; i < array.length; i++){
+		sum += array[i];
+	}
+	console.log(sum);
+	return sum;
 }
 
 /**
@@ -54,11 +59,10 @@ function sumOfArray(array){
  * @return { array }
  */
 function getEvens(array){
-	var length = array.length;
 	var evenArray = [];
-		for (var i = 0; i < length; i++){
+		for (var i = 0; i < array.length; i++){
 			var m = array[0].toString().split("").pop();
-		if (m == 0 || m == 2 || m = 4 || m == 6 || m = 8){
+		if (m == 0 || m == 2 || m == 4 || m == 6 || m == 8){
 			evenArray.push(array[0]);
 			array.shift();
 		}
@@ -85,26 +89,25 @@ getEvens([2, 6, 18, 48, 356]);
  * @return { array }
  */
 function getOdds(array){
-	var length = array.length;
 	var oddArray = [];
-		for (var i = 0 < length; i++){
-			var g = array[0].toString().split("").pop();
-			if (g == 1 || g == 3 || g == 5 || g == 7 || g == 9){
-				oddArray.push(array[0]);
-				array.shift();
-			}
-			else{
-				array.shift();
-			}
-		}
-		if (oddArray.length <= 0){
-			console.log("N/A Odds")
-			return "N/A Odds";
+	for (var i = 0; i < array.length; i++){
+		var g = array[0].toString().split("").pop();
+		if (g == 1 || g == 3 || g == 5 || g == 7 || g == 9){
+			oddArray.push(array[0]);
+			array.shift();
 		}
 		else{
-			console.log(oddArray);
-			return (oddArray);
+			array.shift();
 		}
+	}
+	if (oddArray.length <= 0){
+		console.log("N/A Odds")
+		return "N/A Odds";
+	}
+	else{
+		console.log(oddArray);
+		return oddArray;
+	}
 }
 getOdds([1, 7, 11, 32, 101]);
 
@@ -122,24 +125,22 @@ getOdds([1, 7, 11, 32, 101]);
  * @param  { String } operator ('add', subtract, 'multiply', 'divide')
  * @return { Number/String }
  */
-function calculate(number1, number2, number3){
-	if (operator == "add" || operator == "addition" || operator == "sum"){
+function calculate(number1, number2, x){
+	if (x == "add", "addition", "sum"){
 		output = number1 + number2;
 	}
-	else if (operator == "subtract" || operator == "subtraction" || operator == "difference"){
-		output = number1 - number2;
+		if else (x == "subtract", "subtraction", "difference"){
+			output = number1 - number2;
+		}
+		if else (x == "multiply", "multiplication", "product"){
+			output = number1 * number2;
+		}
+		if else (x == "divide", "division", "quotient"){
+			output = number1 / number2;
+		}
+	else {
+		output = "Redo Equation";
 	}
-	else if (operator == "multiply" || operator == "multiplication" || operator == "product"){
-		output = number1 * number2;
-	}
-	else if (operator == "divide" || operator == "division" || operator == "quotient"){
-		output = number1 / number2;
-	}
-	else{
-		console.log("Invalid operator");
-		return ("Invalid Operator");
-	}
-	console.log("Equation equals to " + output);
-	return (output);
 }
-calculate(21, 40);
+calculate(21, 40, "multiply");
+console.log(output);
