@@ -7,7 +7,7 @@
  * @return { Number }
  */
 function greaterNumber(a, b){
-	if (a > b){
+	if (a > b){		//a > b ? : b;
 		return a;
 	}
 	else{
@@ -27,12 +27,14 @@ greaterNumber(25, 85)
  */
 function stringOfNumbers(n){
 	var numberArray = [];
-		for (var i = 0; i < n; i++){
+		for (var i = 0; i < n; i++){	
 			numberArray += i;
 		}
 		return (numberArray);
 }
-stringOfNumbers(15);
+stringOfNumbers(10);
+//for(i = 0; i < n; i++)
+	//sum += i;
 
 /**
  * Create a function called 'sumOfArray'.
@@ -50,6 +52,11 @@ function sumOfArray(array){
 	console.log(sum);
 	return sum;
 }
+//sumOfArray([0, 1, 2, 3])
+//var arraySum
+//arr.map((currentVal) => {arraySum += currVal})
+//return arraySum
+//}
 
 /**
  * Create a function called 'getEvens'.
@@ -58,16 +65,16 @@ function sumOfArray(array){
  * @param  { array } arr
  * @return { array }
  */
-function getEvens(array){
+function getEvens(arr){
 	var evenArray = [];
-		for (var i = 0; i < array.length; i++){
+		for (var i = 0; i < arr.length; i++){
 			var m = array[0].toString().split("").pop();
 		if (m == 0 || m == 2 || m == 4 || m == 6 || m == 8){
-			evenArray.push(array[0]);
-			array.shift();
+			evenArray.push(arr[0]);
+			arr.shift();
 		}
 		else{
-			array.shift();
+			arr.shift();
 		}
 }
 if (evenArray.length <= 0){
@@ -79,7 +86,13 @@ else {
 	return (evenArray);
 }
 }
-getEvens([2, 6, 18, 48, 356]);
+getEvens([0, 2, 3, 4, 5, 7, 11,]);
+//var evens = [];
+//arr.map(currentVal) => {
+	//if (currVal % 2 === 0){
+		//evens.push(currVal);
+	//}
+//})
 
 /**
  * Create a function called 'getOdds'.
@@ -110,7 +123,13 @@ function getOdds(array){
 	}
 }
 getOdds([1, 7, 11, 32, 101]);
-
+//var odds = [];
+//arr.map(currentVal) => {
+	//if (currVal % 2 !== 0){
+		//odds.push(currVal);
+	//}
+//})
+//return odds
 /**
  * Create a function called 'calculate'.
  * This function will take in 3 parameters:
